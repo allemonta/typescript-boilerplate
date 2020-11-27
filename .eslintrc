@@ -1,0 +1,42 @@
+{
+    "root": true,
+    "extends": "@soluzioni-futura/eslint-config-soluzioni-futura",
+    "ignorePatterns": [
+      "node_modules",
+      "dist"
+    ],
+    "overrides": [
+      {
+        "files": ["*.ts", "*.tsx"],
+        "extends": "plugin:@typescript-eslint/recommended",
+        "parser": "@typescript-eslint/parser",
+        "plugins": [
+          "@typescript-eslint"
+        ],
+        "parserOptions": {
+          "project": "./tsconfig.json"
+        },
+        "rules": {
+          "@typescript-eslint/type-annotation-spacing": ["error"],
+          "@typescript-eslint/no-unused-vars": ["warn"],
+          "@typescript-eslint/await-thenable": "error",
+          "@typescript-eslint/ban-types": [
+            "error",
+            {
+              "types": {
+                "any": {},
+                "unknown": {}
+              }
+            }
+          ],
+          "@typescript-eslint/no-explicit-any": "error",
+          "@typescript-eslint/no-unsafe-return": "error",
+          "@typescript-eslint/explicit-function-return-type": "error",
+          "@typescript-eslint/consistent-type-assertions": "error",
+          "@typescript-eslint/class-literal-property-style": "error",
+          "@typescript-eslint/no-floating-promises": "error",
+          "@typescript-eslint/typedef": "error"
+        }
+      }
+    ]
+  }
